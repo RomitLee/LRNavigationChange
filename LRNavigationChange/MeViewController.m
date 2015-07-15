@@ -17,6 +17,7 @@
 @property (nonatomic,assign) float headHeight;
 
 @property (nonatomic,strong) headView *headViewC;
+@property (nonatomic,strong) headView *headViewF;
 @end
 
 @implementation MeViewController
@@ -29,7 +30,7 @@
     
     headView *headViewF=[[[NSBundle mainBundle]loadNibNamed:@"headView" owner:self options:nil]lastObject];
     headViewF.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width*headViewF.frame.size.height/headViewF.frame.size.width);
-    
+    self.headViewF=headViewF;
     
     self.headHeight=headViewC.frame.size.height;
     self.headViewC=headViewC;
@@ -47,7 +48,7 @@
     [view1 addSubview:headViewC];
     
     
-    
+    sc.backgroundColor=[UIColor whiteColor];
     
     
     
@@ -89,16 +90,26 @@
     if(point.y>self.headHeight-64)
     {
         self.view3.hidden=NO;
+        self.headViewF.fototView.hidden=YES;
+        
+        UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30)];
+        label.textAlignment=NSTextAlignmentCenter;
+        label.text=@"测试这个功能点";
+        label.textColor=[UIColor whiteColor];
+        
+        label.frame=CGRectMake(0, self.headHeight-30-10, [UIScreen mainScreen].bounds.size.width, 30);
+        [self.headViewF addSubview:label];
     }
     else
     {
         self.view3.hidden=YES;
+        
     }
     
     if(point.y<0)
     {
         
-        self.headViewC.gogo.frame=CGRectMake(0+point.y, 0+point.y, [UIScreen mainScreen].bounds.size.width-point.y*3, self.headHeight-point.y*3);
+        self.headViewC.gogo.frame=CGRectMake(0+point.y*[UIScreen mainScreen].bounds.size.width/self.headHeight, 0+point.y, [UIScreen mainScreen].bounds.size.width-point.y*3*[UIScreen mainScreen].bounds.size.width/self.headHeight, self.headHeight-point.y*3);
     }
 }
 
