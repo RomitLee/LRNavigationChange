@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "MeViewController.h"
 
 
 @interface AppDelegate ()
@@ -20,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window=[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    MainViewController *vc=[MainViewController new];
+    MeViewController *vc=[MeViewController new];
     self.window.rootViewController=vc;
     [self.window makeKeyAndVisible];
     
