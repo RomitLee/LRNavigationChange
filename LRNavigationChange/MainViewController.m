@@ -66,11 +66,11 @@
     if(gest.state==UIGestureRecognizerStateChanged)
     {
         CGPoint point=[gest translationInView:gest.view];
-        NSLog(@"----------####%f",point.y);
+        
         
         //头只漏了64个高度的时候
         float ff=64-centerViewHeight-self.centerY;
-        NSLog(@"----------@@@@@@@%f",ff);
+        
         
         //控制头超出64
         if(point.y<0)
@@ -99,7 +99,7 @@
             }
             else
             {
-                NSLog(@"123456--====%f",self.centerY);
+                
                 self.centerView.frame=CGRectMake(0, 64-centerViewHeight+point.y, [UIScreen mainScreen].bounds.size.width, centerViewHeight);
                 self.contentView.frame=CGRectMake(0, 64+point.y, [UIScreen mainScreen].bounds.size.width, contentViewHeight);
             }
