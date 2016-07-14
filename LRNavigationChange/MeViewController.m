@@ -115,7 +115,7 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    [UIView animateWithDuration:2 animations:^{
+    [UIView animateWithDuration:2.5 animations:^{
         self.headViewC.frame=CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.headHeight);
 
     }];
