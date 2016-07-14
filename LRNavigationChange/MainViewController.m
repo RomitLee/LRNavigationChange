@@ -27,7 +27,7 @@
     [super viewDidLoad];
     UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, centerViewHeight)];
     view.backgroundColor=[UIColor yellowColor];
-    
+    //goubi
     self.centerView=view;
     [self.view addSubview:view];
     
