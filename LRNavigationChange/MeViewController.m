@@ -94,7 +94,7 @@
         
         UILabel *label=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 30)];
         label.textAlignment=NSTextAlignmentCenter;
-        label.text=@"测试这个功能点";
+        label.text=@"测试这个功能点!!!";
         label.textColor=[UIColor whiteColor];
         
         label.frame=CGRectMake(0, self.headHeight-30-10, [UIScreen mainScreen].bounds.size.width, 30);
